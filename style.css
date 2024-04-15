@@ -1,0 +1,345 @@
+/* Общие стили */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #F8F9FA;
+    color: #313131;
+}
+
+/* Шапка сайта */
+.golova {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #313131;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #313131;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #15F5BA;
+}
+
+/* Секция Home */
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-content {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+}
+
+.animated-text {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #15F5BA;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+.btn-box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-box a.btn {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background: #15F5BA;
+    height: 50px;
+    border: 2px solid #31363F;
+    border-radius: 9px;
+    font-size: 20px;
+    color: #31363F;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: all 0.5s;
+    margin-right: 20px;
+}
+
+.btn-box a.btn:hover {
+    color: #F8F9FA;
+    border-color: #F8F9FA;
+}
+
+.btn-box a.btn:hover::before {
+    width: 100%;
+}
+
+.btn-box a.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #F8F9FA;
+    z-index: -1;
+    transition: width 0.5s ease;
+}
+
+/* Значки социальных сетей */
+.home-znachki {
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.home-znachki a {
+    position: relative;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #15F5BA;
+    border-radius: 50%;
+    color: #15F5BA;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+
+}
+
+.home-znachki a:hover {
+    color: #31363F;
+}
+
+.home-znachki a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #15F5BA;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-znachki a:hover:before {
+    width: 100%;
+}
+
+/* Секция Portfolio */
+.portfolio {
+    margin-top: -25px;
+}
+
+.heading {
+    font-size: 90px;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+/*--------------------------------------TIMELINE-START-------------------------------------------*/
+
+.timeline-items {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.timeline-items::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: #15F5BA;
+    left: calc(50% - 1px);
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Control ODD Left Allignment: Original: padding-right: calc(50% + 30px);*/
+
+.timeline-item:nth-child(odd) .timeline-content {
+    text-align: justify;
+}
+/* Control EVEN Left Allignment: Original: padding-left: calc(50% + 30px);*/
+.timeline-item:nth-child(even) .timeline-content {
+    text-align: justify;
+}
+
+.timeline-dot {
+    height: 21px;
+    width: 21px;
+    background-color: #15F5BA;
+    box-shadow: 0 0 25px #15F5BA;
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+
+.timeline-content {
+    background-color: #121212;
+    border: 3px solid #15F5BA;
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px #15F5BA;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    display: flex; /* Добавлено выравнивание по вертикали */
+    align-items: center; /* Добавлено выравнивание по вертикали */
+    text-align: justify;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #15F5BA;
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    color: #15F5BA;
+    font-weight: 500;
+    margin-right: 20px; /* Добавлено расстояние между заголовком и изображением */
+}
+
+.timeline-content p {
+    color: #15F5BA;
+}
+
+.timeline-photo {
+    max-width: 150px; /* Ширина изображения */
+    margin-left: 100px; /* Добавлено расстояние между текстом и изображением */
+    margin-right: 100px;
+}
+
+
+/*---------------------------------------TIMELINE-END--------------------------------------------*/
+
+.about {
+    margin-top: 100px;
+    padding: 100px 15px;
+    background-color: #121212; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    text-align: center;
+}
+
+.about-container {
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-heading {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.about-photo {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.about-photo img {
+    width: 300px; /* Ширина изображения */
+    height: auto;
+    border-radius: 38%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Тень изображения */
+    transition: trasform 0.3s ease;
+}
+
+.about-photo img::hover{
+    transform: translateY(10px);
+}
+
+.photo-caption {
+    color: #15F5BA; /* Цвет подписи к фото */
+    margin-top: 10px;
+}
+
+.bottom-text {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    color: #15F5BA; /* Цвет текста внизу */
+}
